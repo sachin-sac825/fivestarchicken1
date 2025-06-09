@@ -1,0 +1,29 @@
+# Node modules (if ever added)
+node_modules
+npm-debug.log
+
+# Git-related
+.git
+.gitignore
+
+# macOS metadata
+.DS_Store
+
+# IDE/editor config files
+.vscode
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# OS temp files
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Jenkins
+Jenkinsfile
