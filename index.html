@@ -2,106 +2,126 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Doraemon CI/CD Pipeline</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Doraemon Fan Page</title>
   <style>
     body {
       margin: 0;
-      background: linear-gradient(to bottom, #add8e6, #ffffff);
       font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f8ff;
+      color: #333;
+    }
+
+    header {
+      background: url('https://i.pinimg.com/originals/f2/4c/f9/f24cf92c2c57316846cfae38f0b0fd70.jpg') no-repeat center/cover;
+      height: 300px;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      text-shadow: 2px 2px 4px #000;
+      color: white;
     }
 
-    .doraemon {
-      position: relative;
-      width: 200px;
-      height: 200px;
-      background: #1e90ff;
-      border-radius: 50%;
-      border: 5px solid #000;
-      animation: float 3s ease-in-out infinite;
+    header h1 {
+      font-size: 48px;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 10px 20px;
+      border-radius: 10px;
     }
 
-    .eyes {
-      position: absolute;
-      top: 50px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 25px;
+    .container {
+      padding: 30px;
+      text-align: center;
     }
 
-    .eye {
-      width: 30px;
-      height: 30px;
-      background: white;
-      border: 2px solid black;
-      border-radius: 50%;
-      position: relative;
-      overflow: hidden;
+    .about {
+      max-width: 800px;
+      margin: auto;
+      font-size: 18px;
+      line-height: 1.6;
     }
 
-    .eye::before {
-      content: "";
-      position: absolute;
-      top: 5px;
-      left: 5px;
-      width: 10px;
-      height: 10px;
-      background: black;
-      border-radius: 50%;
-      animation: blink 4s infinite;
-    }
-
-    .nose {
-      width: 20px;
-      height: 20px;
-      background: red;
-      border-radius: 50%;
-      position: absolute;
-      top: 100px;
-      left: 50%;
-      transform: translateX(-50%);
-      border: 2px solid #000;
-    }
-
-    .ci-text {
+    .gallery {
       margin-top: 40px;
-      font-size: 24px;
-      font-weight: bold;
-      color: #333;
-      animation: fadeInOut 3s infinite;
     }
 
-    @keyframes blink {
-      0%, 90%, 100% { transform: translate(0, 0); }
-      45% { transform: translate(0, 5px); }
+    .gallery h2 {
+      margin-bottom: 20px;
+      font-size: 28px;
     }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+    .slider {
+      display: flex;
+      overflow: hidden;
+      justify-content: center;
     }
 
-    @keyframes fadeInOut {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
+    .slider img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      margin: 0 10px;
+      border-radius: 15px;
+      transition: transform 0.3s;
     }
 
+    .slider img:hover {
+      transform: scale(1.1);
+    }
+
+    .btn-container {
+      margin-top: 40px;
+    }
+
+    .btn {
+      background-color: #1e90ff;
+      color: white;
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #0066cc;
+    }
   </style>
 </head>
 <body>
-  <div class="doraemon">
-    <div class="eyes">
-      <div class="eye"></div>
-      <div class="eye"></div>
+
+  <header>
+    <h1>Doraemon Fan Page</h1>
+  </header>
+
+  <div class="container">
+    <div class="about">
+      <p>
+        Doraemon is a robotic cat from the future who travels back in time to help Nobita, a kind but clumsy boy.
+        With his pocket filled with futuristic gadgets, Doraemon brings fun, chaos, and heartwarming lessons.
+        Loved by millions around the world, Doraemon remains a symbol of childhood joy and imagination!
+      </p>
     </div>
-    <div class="nose"></div>
+
+    <div class="gallery">
+      <h2>Image Gallery</h2>
+      <div class="slider" id="imageSlider">
+        <img src="https://wallpapercave.com/wp/wp7259531.jpg" alt="Doraemon 1">
+        <img src="https://i.pinimg.com/736x/3c/27/2e/3c272e76aa816f6c1ceebc96dbf9eb26.jpg" alt="Doraemon 2">
+        <img src="https://i.pinimg.com/originals/c4/f5/b8/c4f5b86f370b2e8e0ac4e5e7cf25607e.jpg" alt="Doraemon 3">
+      </div>
+    </div>
+
+    <div class="btn-container">
+      <button class="btn" onclick="showLove()">💙 Say Hi to Doraemon!</button>
+    </div>
   </div>
-  <div class="ci-text">CI/CD Pipeline is in Progress...</div>
+
+  <script>
+    function showLove() {
+      alert("Doraemon says: 'I'm always here to help you, friend!' 💙😺");
+    }
+  </script>
 </body>
 </html>
